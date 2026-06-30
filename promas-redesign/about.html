@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | ProMas Building Marbella</title>
+<meta name="description" content="20+ years building bespoke villas and renovations on the Costa del Sol. Meet the ProMas Building team, our story and our values.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+<link href="site.css" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-cream/95 backdrop-blur shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-2 group" aria-label="ProMas Building home">
+      <span class="font-serif text-xl tracking-[0.15em] text-ink nav-logo-text transition-colors">PRO<span class="text-gold">MAS</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10 text-sm tracking-wide uppercase nav-text text-ink">
+      <a href="index.html" data-nav="index.html" class="nav-link transition-colors">Home</a>
+      <a href="services.html" data-nav="services.html" class="nav-link transition-colors">Services</a>
+      <a href="projects.html" data-nav="projects.html" class="nav-link transition-colors">Projects</a>
+      <a href="about.html" data-nav="about.html" class="nav-link transition-colors">About</a>
+      <a href="contact.html" data-nav="contact.html" class="nav-link transition-colors">Contact</a>
+    </nav>
+    <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 border border-gold text-gold hover:bg-gold hover:text-white px-6 py-2.5 text-xs tracking-[0.2em] uppercase transition-colors cursor-pointer">
+      Request Consultation
+    </a>
+    <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-ink cursor-pointer p-2 -mr-2">
+      <svg id="menu-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="menu-icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hidden"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden bg-ink border-t border-white/10 shadow-2xl">
+    <nav class="flex flex-col px-6 py-6 gap-5 text-sm tracking-wide uppercase">
+      <a href="index.html" class="text-stone hover:text-goldlight transition-colors">Home</a>
+      <a href="services.html" class="text-stone hover:text-goldlight transition-colors">Services</a>
+      <a href="projects.html" class="text-stone hover:text-goldlight transition-colors">Projects</a>
+      <a href="about.html" class="text-stone hover:text-goldlight transition-colors">About</a>
+      <a href="contact.html" class="text-stone hover:text-goldlight transition-colors">Contact</a>
+      <a href="contact.html" class="inline-flex w-fit items-center gap-2 border border-goldlight text-goldlight px-6 py-2.5 text-xs tracking-[0.2em] uppercase mt-2">Request Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-bg pt-44 pb-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <p class="reveal text-goldlight text-xs tracking-[0.3em] uppercase mb-4">About ProMas</p>
+    <h1 class="reveal text-white font-serif text-4xl sm:text-5xl lg:text-6xl max-w-3xl">Two Decades Of Building Trust On The Costa del Sol</h1>
+  </div>
+</section>
+
+<!-- ===== STORY ===== -->
+<section class="py-24 lg:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Our Story</p>
+      <h2 class="font-serif text-3xl sm:text-4xl gold-underline pb-4">Founded On Craftsmanship And Care</h2>
+      <p class="text-ink/70 mt-8 leading-relaxed font-light">
+        ProMas Building was founded over 20 years ago with a simple belief: that building a home for a client should feel as considered and personal as designing one for ourselves. What began as a small team of builders in Marbella has grown into a full-service construction company trusted by homeowners and investors across the Costa del Sol.
+      </p>
+      <p class="text-ink/70 mt-5 leading-relaxed font-light">
+        Today, our multilingual team manages every stage of a project in-house — architecture, permits, construction, interiors and landscaping — so clients have a single point of contact from first sketch to final handover. We have delivered more than 150 villas, reforms and extensions, many for repeat clients who return to us project after project.
+      </p>
+    </div>
+    <div class="reveal relative h-[420px]">
+      <div class="absolute inset-0" style="background:linear-gradient(135deg,#3a3128,#171717);"></div>
+      <div class="absolute -bottom-6 -left-6 bg-ink text-cream p-8 max-w-xs hidden sm:block">
+        <p class="font-serif text-3xl text-goldlight">15+</p>
+        <p class="text-xs tracking-[0.2em] uppercase text-stone/70 mt-2">Years Based In Marbella</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDER ===== -->
+<section class="py-24 lg:py-32 bg-ink text-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal relative h-[420px] order-2 lg:order-1">
+      <div class="absolute inset-0" style="background:linear-gradient(135deg,#534531,#211c17);"></div>
+    </div>
+    <div class="reveal order-1 lg:order-2">
+      <p class="text-goldlight text-xs tracking-[0.3em] uppercase mb-4">Leadership</p>
+      <h2 class="font-serif text-3xl sm:text-4xl gold-underline pb-4">Meet Andy Prozhmi, Founder</h2>
+      <p class="text-stone/70 mt-8 leading-relaxed font-light">
+        Andy founded ProMas Building with a hands-on philosophy that still defines the company today — he oversees every project personally, from the first site visit to the final walkthrough. His attention to detail and direct involvement give clients confidence that their home is being built exactly as promised.
+      </p>
+      <p class="text-stone/70 mt-5 leading-relaxed font-light">
+        Under Andy's leadership, ProMas has built a reputation for transparent communication, near-daily project updates, and a level of craftsmanship that has made the company a trusted name among Marbella's villa owners and property investors.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES ===== -->
+<section class="py-24 lg:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl reveal">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">What We Stand For</p>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">Our Values</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-16">
+      <div class="reveal">
+        <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/></svg>
+        <h3 class="font-serif text-xl mb-3">Trust</h3>
+        <p class="text-ink/60 text-sm leading-relaxed font-light">Transparent pricing, honest timelines and a team that does what it says it will.</p>
+      </div>
+      <div class="reveal">
+        <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+        <h3 class="font-serif text-xl mb-3">Craftsmanship</h3>
+        <p class="text-ink/60 text-sm leading-relaxed font-light">Skilled in-house tradespeople and meticulous attention to every finish.</p>
+      </div>
+      <div class="reveal">
+        <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8M8 16h5M4 4h16v14l-4 4-4-4H4V4Z"/></svg>
+        <h3 class="font-serif text-xl mb-3">Communication</h3>
+        <p class="text-ink/60 text-sm leading-relaxed font-light">Near-daily updates so you always know exactly where your project stands.</p>
+      </div>
+      <div class="reveal">
+        <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3.5 2"/></svg>
+        <h3 class="font-serif text-xl mb-3">Reliability</h3>
+        <p class="text-ink/60 text-sm leading-relaxed font-light">Realistic schedules, delivered on time, with no unwelcome surprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="py-24 lg:py-32 bg-stone/40">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Our Journey</p>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline center pb-4 inline-block">Two Decades Of Growth</h2>
+    </div>
+    <div class="mt-16 space-y-10">
+      <div class="reveal flex gap-8 items-start">
+        <span class="num-badge text-4xl text-gold/40 shrink-0">2004</span>
+        <div class="border-l border-stone pl-8 pb-2">
+          <h3 class="font-serif text-lg mb-2">ProMas Building Founded</h3>
+          <p class="text-ink/60 text-sm font-light leading-relaxed">Andy Prozhmi establishes ProMas in Marbella, taking on its first villa renovation projects.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-8 items-start">
+        <span class="num-badge text-4xl text-gold/40 shrink-0">2012</span>
+        <div class="border-l border-stone pl-8 pb-2">
+          <h3 class="font-serif text-lg mb-2">In-House Design Team</h3>
+          <p class="text-ink/60 text-sm font-light leading-relaxed">Architecture and 3D rendering brought in-house, enabling full design-to-build delivery.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-8 items-start">
+        <span class="num-badge text-4xl text-gold/40 shrink-0">2018</span>
+        <div class="border-l border-stone pl-8 pb-2">
+          <h3 class="font-serif text-lg mb-2">100th Project Delivered</h3>
+          <p class="text-ink/60 text-sm font-light leading-relaxed">ProMas reaches a milestone, expanding services into interiors, pools and landscaping.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-8 items-start">
+        <span class="num-badge text-4xl text-gold/40 shrink-0">Today</span>
+        <div class="pl-8">
+          <h3 class="font-serif text-lg mb-2">150+ Villas And Counting</h3>
+          <p class="text-ink/60 text-sm font-light leading-relaxed">A trusted multilingual team serving Marbella, Benahavís, Nueva Andalucía and beyond.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-24 bg-cream text-center">
+  <div class="max-w-2xl mx-auto px-6 reveal">
+    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl">Let's Build Something Together</h2>
+    <p class="text-ink/70 mt-6 font-light leading-relaxed">Get in touch with our team to discuss your project, no matter the scale.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-goldlight text-ink px-10 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-ink hover:text-white transition-colors cursor-pointer">
+      Request Consultation
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-stone/60 pt-16 pb-8 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <span class="font-serif text-xl tracking-[0.15em] text-white">PRO<span class="text-goldlight">MAS</span></span>
+      <p class="text-sm font-light mt-4 leading-relaxed max-w-xs">Bespoke construction and renovation for distinguished homes across the Costa del Sol.</p>
+    </div>
+    <div>
+      <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Company</h4>
+      <ul class="space-y-2 text-sm font-light">
+        <li><a href="about.html" class="hover:text-goldlight transition-colors cursor-pointer">About Us</a></li>
+        <li><a href="projects.html" class="hover:text-goldlight transition-colors cursor-pointer">Projects</a></li>
+        <li><a href="index.html#trust" class="hover:text-goldlight transition-colors cursor-pointer">Why ProMas</a></li>
+        <li><a href="contact.html" class="hover:text-goldlight transition-colors cursor-pointer">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Services</h4>
+      <ul class="space-y-2 text-sm font-light">
+        <li><a href="services.html#new-build" class="hover:text-goldlight transition-colors cursor-pointer">New Build Villas</a></li>
+        <li><a href="services.html#reforms" class="hover:text-goldlight transition-colors cursor-pointer">Reforms &amp; Extensions</a></li>
+        <li><a href="services.html#interiors" class="hover:text-goldlight transition-colors cursor-pointer">Interior Design</a></li>
+        <li><a href="services.html#pools" class="hover:text-goldlight transition-colors cursor-pointer">Pools &amp; Landscaping</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Areas Covered</h4>
+      <p class="text-sm font-light leading-relaxed">Marbella, Benahavís, Nueva Andalucía, Puerto Banús, Estepona, Istán &amp; surrounding Costa del Sol.</p>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+    <p>© <span id="year"></span> ProMas Building. All rights reserved.</p>
+    <p class="text-stone/40">Crafted with care for Costa del Sol homeowners.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
