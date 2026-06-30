@@ -9,71 +9,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Josefin Sans', sans-serif; background: #FAF8F4; color: #171717; }
-  h1, h2, h3, .font-serif { font-family: 'Cinzel', serif; }
-  ::selection { background: #A16207; color: #fff; }
-
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); }
-
-  .hero-bg {
-    background:
-      linear-gradient(180deg, rgba(10,9,8,.55) 0%, rgba(10,9,8,.35) 40%, rgba(10,9,8,.75) 100%),
-      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%232b2722"/><stop offset="55%" stop-color="%23433a2e"/><stop offset="100%" stop-color="%23171717"/></linearGradient></defs><rect width="1600" height="1000" fill="url(%23g)"/><g opacity="0.18" stroke="%23C99A3D" stroke-width="2"><path d="M0 700 L400 520 L800 700 L1200 480 L1600 660"/><path d="M0 760 L400 600 L800 760 L1200 560 L1600 740"/></g><g opacity="0.5" fill="%23C99A3D"><rect x="120" y="430" width="3" height="270"/><rect x="320" y="380" width="3" height="320"/><rect x="980" y="350" width="3" height="350"/><rect x="1180" y="400" width="3" height="300"/></g></svg>');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .marquee-track { animation: marquee 28s linear infinite; }
-  @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
-
-  .num-badge { font-family: 'Cinzel', serif; }
-
-  .card-hover { transition: transform .35s ease, box-shadow .35s ease; }
-  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -16px rgba(23,23,23,.25); }
-
-  .gold-underline { position: relative; }
-  .gold-underline::after {
-    content: ''; position: absolute; left: 0; bottom: -10px; height: 2px; width: 56px;
-    background: linear-gradient(90deg,#A16207,#C99A3D);
-  }
-  .gold-underline.center::after { left: 50%; transform: translateX(-50%); }
-
-  .nav-link { position: relative; }
-  .nav-link::after {
-    content: ''; position: absolute; left: 0; bottom: -4px; width: 0%; height: 1px; background: #C99A3D;
-    transition: width .3s ease;
-  }
-  .nav-link:hover::after { width: 100%; }
-
-  .project-img {
-    background-size: cover; background-position: center;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
-    .marquee-track { animation: none; }
-  }
-</style>
+<link href="site.css" rel="stylesheet">
 </head>
-<body class="antialiased">
+<body class="antialiased" data-transparent-nav>
 
 <!-- ===== NAV ===== -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
-    <a href="#home" class="flex items-center gap-2 group" aria-label="ProMas Building home">
+    <a href="index.html" class="flex items-center gap-2 group" aria-label="ProMas Building home">
       <span class="font-serif text-xl tracking-[0.15em] text-white nav-logo-text transition-colors">PRO<span class="text-goldlight">MAS</span></span>
     </a>
     <nav class="hidden lg:flex items-center gap-10 text-sm tracking-wide uppercase nav-text">
-      <a href="#services" class="nav-link transition-colors">Services</a>
-      <a href="#process" class="nav-link transition-colors">Process</a>
-      <a href="#projects" class="nav-link transition-colors">Projects</a>
-      <a href="#testimonials" class="nav-link transition-colors">Clients</a>
-      <a href="#about" class="nav-link transition-colors">About</a>
+      <a href="index.html" data-nav="index.html" class="nav-link transition-colors active">Home</a>
+      <a href="services.html" data-nav="services.html" class="nav-link transition-colors">Services</a>
+      <a href="projects.html" data-nav="projects.html" class="nav-link transition-colors">Projects</a>
+      <a href="about.html" data-nav="about.html" class="nav-link transition-colors">About</a>
+      <a href="contact.html" data-nav="contact.html" class="nav-link transition-colors">Contact</a>
     </nav>
-    <a href="#contact" class="hidden lg:inline-flex items-center gap-2 border border-goldlight text-goldlight hover:bg-goldlight hover:text-ink px-6 py-2.5 text-xs tracking-[0.2em] uppercase transition-colors cursor-pointer">
+    <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 border border-goldlight text-goldlight hover:bg-goldlight hover:text-ink px-6 py-2.5 text-xs tracking-[0.2em] uppercase transition-colors cursor-pointer">
       Request Consultation
     </a>
     <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-white cursor-pointer p-2 -mr-2">
@@ -81,21 +34,20 @@
       <svg id="menu-icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hidden"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <!-- Mobile menu -->
   <div id="mobile-menu" class="lg:hidden hidden bg-ink border-t border-white/10 shadow-2xl">
     <nav class="flex flex-col px-6 py-6 gap-5 text-sm tracking-wide uppercase">
-      <a href="#services" class="text-stone hover:text-goldlight transition-colors">Services</a>
-      <a href="#process" class="text-stone hover:text-goldlight transition-colors">Process</a>
-      <a href="#projects" class="text-stone hover:text-goldlight transition-colors">Projects</a>
-      <a href="#testimonials" class="text-stone hover:text-goldlight transition-colors">Clients</a>
-      <a href="#about" class="text-stone hover:text-goldlight transition-colors">About</a>
-      <a href="#contact" class="inline-flex w-fit items-center gap-2 border border-goldlight text-goldlight px-6 py-2.5 text-xs tracking-[0.2em] uppercase mt-2">Request Consultation</a>
+      <a href="index.html" class="text-stone hover:text-goldlight transition-colors">Home</a>
+      <a href="services.html" class="text-stone hover:text-goldlight transition-colors">Services</a>
+      <a href="projects.html" class="text-stone hover:text-goldlight transition-colors">Projects</a>
+      <a href="about.html" class="text-stone hover:text-goldlight transition-colors">About</a>
+      <a href="contact.html" class="text-stone hover:text-goldlight transition-colors">Contact</a>
+      <a href="contact.html" class="inline-flex w-fit items-center gap-2 border border-goldlight text-goldlight px-6 py-2.5 text-xs tracking-[0.2em] uppercase mt-2">Request Consultation</a>
     </nav>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
-<section id="home" class="relative min-h-[100dvh] flex items-end hero-bg">
+<section class="relative min-h-[100dvh] flex items-end hero-bg">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 pb-24 pt-40 w-full">
     <p class="reveal text-goldlight text-xs sm:text-sm tracking-[0.4em] uppercase mb-6">Marbella · Benahavís · Nueva Andalucía · Costa del Sol</p>
     <h1 class="reveal text-white font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.1] max-w-4xl">
@@ -105,10 +57,10 @@
       Over 20 years crafting bespoke villas, full reforms and architectural extensions for discerning owners — from concept and permits to the final detail.
     </p>
     <div class="reveal flex flex-col sm:flex-row gap-4 mt-10">
-      <a href="#contact" class="inline-flex justify-center items-center gap-2 bg-goldlight text-ink px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-white transition-colors cursor-pointer">
+      <a href="contact.html" class="inline-flex justify-center items-center gap-2 bg-goldlight text-ink px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-white transition-colors cursor-pointer">
         Start Your Project
       </a>
-      <a href="#projects" class="inline-flex justify-center items-center gap-2 border border-white/40 text-white px-8 py-4 text-xs tracking-[0.2em] uppercase hover:border-goldlight hover:text-goldlight transition-colors cursor-pointer">
+      <a href="projects.html" class="inline-flex justify-center items-center gap-2 border border-white/40 text-white px-8 py-4 text-xs tracking-[0.2em] uppercase hover:border-goldlight hover:text-goldlight transition-colors cursor-pointer">
         View Our Work
       </a>
     </div>
@@ -123,63 +75,67 @@
 <section id="trust" class="bg-ink text-cream">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
     <div class="reveal">
-      <p class="font-serif text-3xl sm:text-4xl text-goldlight">20+</p>
+      <p class="font-serif text-3xl sm:text-4xl text-goldlight"><span data-count="20" data-suffix="+">0</span></p>
       <p class="text-xs tracking-[0.2em] uppercase text-stone/70 mt-2">Years Experience</p>
     </div>
     <div class="reveal">
-      <p class="font-serif text-3xl sm:text-4xl text-goldlight">150+</p>
+      <p class="font-serif text-3xl sm:text-4xl text-goldlight"><span data-count="150" data-suffix="+">0</span></p>
       <p class="text-xs tracking-[0.2em] uppercase text-stone/70 mt-2">Villas Delivered</p>
     </div>
     <div class="reveal">
-      <p class="font-serif text-3xl sm:text-4xl text-goldlight">15</p>
+      <p class="font-serif text-3xl sm:text-4xl text-goldlight"><span data-count="15">0</span></p>
       <p class="text-xs tracking-[0.2em] uppercase text-stone/70 mt-2">Years in Marbella</p>
     </div>
     <div class="reveal">
-      <p class="font-serif text-3xl sm:text-4xl text-goldlight">5★</p>
+      <p class="font-serif text-3xl sm:text-4xl text-goldlight"><span data-count="5" data-suffix="★">0</span></p>
       <p class="text-xs tracking-[0.2em] uppercase text-stone/70 mt-2">Client Rating</p>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section id="services" class="py-24 lg:py-32 bg-cream">
+<!-- ===== SERVICES PREVIEW ===== -->
+<section class="py-24 lg:py-32 bg-cream">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="max-w-2xl reveal">
-      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">What We Do</p>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">A Complete Building Service</h2>
-      <p class="text-ink/70 mt-8 leading-relaxed font-light">
-        From the first sketch to the final coat of paint, our multilingual team manages every stage of your project — design, permits, construction and interiors — under one roof.
-      </p>
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      <div class="max-w-2xl reveal">
+        <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">What We Do</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">A Complete Building Service</h2>
+        <p class="text-ink/70 mt-8 leading-relaxed font-light">
+          From the first sketch to the final coat of paint, our multilingual team manages every stage of your project — design, permits, construction and interiors — under one roof.
+        </p>
+      </div>
+      <a href="services.html" class="reveal shrink-0 inline-flex items-center gap-2 text-gold border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase hover:text-ink hover:border-ink transition-colors cursor-pointer">
+        All Services →
+      </a>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-stone mt-16">
-      <!-- Service Card template -->
-      <div class="reveal card-hover bg-cream p-10 group">
+      <div class="reveal card-hover bg-cream p-10">
         <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5 12 3l9 6.5M5 9v11h14V9M9 20v-6h6v6"/></svg>
         <h3 class="font-serif text-xl mb-3">New Build Villas</h3>
         <p class="text-ink/60 text-sm leading-relaxed font-light">Architectural design through to turnkey delivery of bespoke contemporary and classic villas.</p>
       </div>
-      <div class="reveal card-hover bg-cream p-10 group">
+      <div class="reveal card-hover bg-cream p-10">
         <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg>
         <h3 class="font-serif text-xl mb-3">Full Reforms &amp; Extensions</h3>
         <p class="text-ink/60 text-sm leading-relaxed font-light">Complete renovations, extensions and layout reconfigurations for existing homes and apartments.</p>
       </div>
-      <div class="reveal card-hover bg-cream p-10 group">
+      <div class="reveal card-hover bg-cream p-10">
         <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17h18M5 17V8l7-4 7 4v9M9 17v-5h6v5"/></svg>
         <h3 class="font-serif text-xl mb-3">Design &amp; 3D Renders</h3>
         <p class="text-ink/60 text-sm leading-relaxed font-light">In-house architectural plans, layouts and photo-realistic 3D renders before a single brick is laid.</p>
       </div>
-      <div class="reveal card-hover bg-cream p-10 group">
+      <div class="reveal card-hover bg-cream p-10">
         <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z M12 8v6M9 11h6"/></svg>
         <h3 class="font-serif text-xl mb-3">Building Permits</h3>
         <p class="text-ink/60 text-sm leading-relaxed font-light">Full management of licences and permits with local town halls across the Costa del Sol.</p>
       </div>
-      <div class="reveal card-hover bg-cream p-10 group">
+      <div class="reveal card-hover bg-cream p-10">
         <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
         <h3 class="font-serif text-xl mb-3">Interior Design</h3>
         <p class="text-ink/60 text-sm leading-relaxed font-light">Tailored interiors, finishes and furnishings that elevate every room to a five-star standard.</p>
       </div>
-      <div class="reveal card-hover bg-cream p-10 group">
+      <div class="reveal card-hover bg-cream p-10">
         <svg class="w-9 h-9 text-gold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19h16M6 19V9l4-3 4 3v10M14 19v-6h4v6"/><circle cx="8" cy="13" r="1.2" fill="currentColor" stroke="none"/></svg>
         <h3 class="font-serif text-xl mb-3">Pools &amp; Landscaping</h3>
         <p class="text-ink/60 text-sm leading-relaxed font-light">Swimming pools, gardens and outdoor living spaces designed for the Mediterranean lifestyle.</p>
@@ -189,7 +145,7 @@
 </section>
 
 <!-- ===== PROCESS ===== -->
-<section id="process" class="py-24 lg:py-32 bg-ink text-cream relative overflow-hidden">
+<section class="py-24 lg:py-32 bg-ink text-cream relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
     <div class="max-w-2xl reveal">
       <p class="text-goldlight text-xs tracking-[0.3em] uppercase mb-4">How We Work</p>
@@ -221,19 +177,21 @@
   </div>
 </section>
 
-<!-- ===== PROJECTS / PORTFOLIO ===== -->
-<section id="projects" class="py-24 lg:py-32 bg-cream">
+<!-- ===== FEATURED PROJECTS ===== -->
+<section class="py-24 lg:py-32 bg-cream">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
       <div class="max-w-2xl">
         <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Selected Work</p>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">Recent Projects</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">Featured Projects</h2>
       </div>
-      <p class="text-ink/60 font-light max-w-md">A glimpse of villas and reforms across Marbella's most sought-after addresses — Golden Mile, Puerto Banús, La Quinta and Sierra Blanca.</p>
+      <a href="projects.html" class="shrink-0 inline-flex items-center gap-2 text-gold border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase hover:text-ink hover:border-ink transition-colors cursor-pointer">
+        View All Projects →
+      </a>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-      <a href="#contact" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
+      <a href="projects.html" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
         <div class="project-img absolute inset-0" style="background:linear-gradient(135deg,#3a3128,#171717);"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
         <div class="absolute bottom-0 left-0 p-6">
@@ -241,7 +199,7 @@
           <h3 class="font-serif text-white text-xl">Villa Horizonte</h3>
         </div>
       </a>
-      <a href="#contact" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
+      <a href="projects.html" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
         <div class="project-img absolute inset-0" style="background:linear-gradient(135deg,#534531,#211c17);"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
         <div class="absolute bottom-0 left-0 p-6">
@@ -249,7 +207,7 @@
           <h3 class="font-serif text-white text-xl">Casa Almendro</h3>
         </div>
       </a>
-      <a href="#contact" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
+      <a href="projects.html" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
         <div class="project-img absolute inset-0" style="background:linear-gradient(135deg,#2c3a38,#15201d);"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
         <div class="absolute bottom-0 left-0 p-6">
@@ -257,114 +215,58 @@
           <h3 class="font-serif text-white text-xl">Villa Cielo</h3>
         </div>
       </a>
-      <a href="#contact" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
-        <div class="project-img absolute inset-0" style="background:linear-gradient(135deg,#46392a,#1b1612);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 p-6">
-          <p class="text-goldlight text-[11px] tracking-[0.2em] uppercase mb-1">Interiors · Puerto Banús</p>
-          <h3 class="font-serif text-white text-xl">Marina Penthouse</h3>
-        </div>
-      </a>
-      <a href="#contact" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
-        <div class="project-img absolute inset-0" style="background:linear-gradient(135deg,#3d3a31,#1a1814);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 p-6">
-          <p class="text-goldlight text-[11px] tracking-[0.2em] uppercase mb-1">Pool &amp; Garden · Benahavís</p>
-          <h3 class="font-serif text-white text-xl">Finca Verde</h3>
-        </div>
-      </a>
-      <a href="#contact" class="reveal card-hover group relative h-80 overflow-hidden block cursor-pointer">
-        <div class="project-img absolute inset-0" style="background:linear-gradient(135deg,#2f2a24,#151210);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 p-6">
-          <p class="text-goldlight text-[11px] tracking-[0.2em] uppercase mb-1">New Build · Nueva Andalucía</p>
-          <h3 class="font-serif text-white text-xl">Villa Aurora</h3>
-        </div>
-      </a>
     </div>
   </div>
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-<section id="testimonials" class="py-24 lg:py-32 bg-stone/40">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+<section class="py-24 lg:py-32 bg-stone/40">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10">
     <div class="max-w-2xl mx-auto text-center reveal">
       <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Client Stories</p>
       <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline center pb-4 inline-block">Trusted By Homeowners</h2>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-8 mt-16">
-      <blockquote class="reveal bg-cream p-8 border border-stone">
-        <div class="flex gap-1 text-goldlight mb-5" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+    <div class="relative mt-16 reveal">
+      <div class="testi-slide active text-center">
+        <div class="flex justify-center gap-1 text-goldlight mb-6" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
         </div>
-        <p class="text-ink/80 font-light italic leading-relaxed">"Communication was seamless, with near-daily updates. The whole team brought a level of professionalism that far exceeded our expectations."</p>
-        <footer class="mt-6 text-sm tracking-wide uppercase text-ink/50">— Villa Owner, Nueva Andalucía</footer>
-      </blockquote>
-      <blockquote class="reveal bg-cream p-8 border border-stone">
-        <div class="flex gap-1 text-goldlight mb-5" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-        </div>
-        <p class="text-ink/80 font-light italic leading-relaxed">"ProMas provided an absolutely outstanding service from beginning to end, with exceptional communication throughout our renovation."</p>
-        <footer class="mt-6 text-sm tracking-wide uppercase text-ink/50">— Homeowner, La Quinta</footer>
-      </blockquote>
-      <blockquote class="reveal bg-cream p-8 border border-stone">
-        <div class="flex gap-1 text-goldlight mb-5" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
-        </div>
-        <p class="text-ink/80 font-light italic leading-relaxed">"Andy oversees everything personally. You can tell this team genuinely cares about the end result, not just the contract."</p>
-        <footer class="mt-6 text-sm tracking-wide uppercase text-ink/50">— Investor, Golden Mile</footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about" class="py-24 lg:py-32 bg-cream">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
-    <div class="reveal relative h-[28rem] order-2 lg:order-1">
-      <div class="absolute inset-0" style="background:linear-gradient(135deg,#2c2620,#171717);"></div>
-      <div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 border-2 border-goldlight hidden sm:block"></div>
-    </div>
-    <div class="order-1 lg:order-2">
-      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4 reveal">About ProMas</p>
-      <h2 class="reveal font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">Led By Builders Who Build It Themselves</h2>
-      <p class="reveal text-ink/70 mt-8 leading-relaxed font-light">
-        Headed by Andy Prozhmi, ProMas Building has spent over two decades building and reforming stylish homes across Marbella, Benahavís, Nueva Andalucía and Istán. For 15 years we've operated as a trusted, multilingual construction company on the Costa del Sol — with a fully qualified team of builders, architects and technicians overseen personally on every site.
-      </p>
-      <div class="reveal grid grid-cols-2 gap-6 mt-10">
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12l4 4 10-10"/></svg>
-          <span class="text-sm text-ink/70 font-light">In-house architects &amp; engineers</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12l4 4 10-10"/></svg>
-          <span class="text-sm text-ink/70 font-light">Multilingual project management</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12l4 4 10-10"/></svg>
-          <span class="text-sm text-ink/70 font-light">Owner on-site, every project</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12l4 4 10-10"/></svg>
-          <span class="text-sm text-ink/70 font-light">Transparent, near-daily updates</span>
-        </div>
+        <p class="text-ink/80 font-light italic text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">"Communication was seamless, with near-daily updates. The whole team brought a level of professionalism that far exceeded our expectations."</p>
+        <p class="mt-6 text-sm tracking-wide uppercase text-ink/50">— Villa Owner, Nueva Andalucía</p>
       </div>
-      <a href="#contact" class="reveal inline-flex items-center gap-2 mt-10 text-gold border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase hover:text-ink hover:border-ink transition-colors cursor-pointer">
-        Meet The Team →
-      </a>
+      <div class="testi-slide text-center">
+        <div class="flex justify-center gap-1 text-goldlight mb-6" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+        </div>
+        <p class="text-ink/80 font-light italic text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">"ProMas provided an absolutely outstanding service from beginning to end, with exceptional communication throughout our renovation."</p>
+        <p class="mt-6 text-sm tracking-wide uppercase text-ink/50">— Homeowner, La Quinta</p>
+      </div>
+      <div class="testi-slide text-center">
+        <div class="flex justify-center gap-1 text-goldlight mb-6" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7L2 9.3l7.1-.7z"/></svg>
+        </div>
+        <p class="text-ink/80 font-light italic text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">"Andy oversees everything personally. You can tell this team genuinely cares about the end result, not just the contract."</p>
+        <p class="mt-6 text-sm tracking-wide uppercase text-ink/50">— Investor, Golden Mile</p>
+      </div>
+
+      <div class="flex justify-center gap-3 mt-10">
+        <button class="dot active w-2.5 h-2.5 rounded-full bg-stone cursor-pointer" aria-label="Testimonial 1"></button>
+        <button class="dot w-2.5 h-2.5 rounded-full bg-stone cursor-pointer" aria-label="Testimonial 2"></button>
+        <button class="dot w-2.5 h-2.5 rounded-full bg-stone cursor-pointer" aria-label="Testimonial 3"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -395,74 +297,14 @@
   </div>
 </section>
 
-<!-- ===== CONTACT / CTA ===== -->
-<section id="contact" class="py-24 lg:py-32 bg-cream">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16">
-    <div class="reveal">
-      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Get In Touch</p>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl gold-underline pb-4">Let's Build Something Exceptional</h2>
-      <p class="text-ink/70 mt-8 leading-relaxed font-light max-w-md">
-        Tell us about your villa, reform or new build. We'll arrange a personal consultation to discuss your vision, timeline and budget — no obligation.
-      </p>
-
-      <div class="mt-10 space-y-5">
-        <div class="flex items-center gap-4">
-          <span class="w-10 h-10 flex items-center justify-center border border-gold/40 text-gold shrink-0">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 5l9 8 9-8M3 5v14h18V5"/></svg>
-          </span>
-          <a href="mailto:info@promasbuilding.com" class="text-ink/80 hover:text-gold transition-colors cursor-pointer">info@promasbuilding.com</a>
-        </div>
-        <div class="flex items-center gap-4">
-          <span class="w-10 h-10 flex items-center justify-center border border-gold/40 text-gold shrink-0">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.68 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.83.55 2.78.68A2 2 0 0 1 22 16.92Z"/></svg>
-          </span>
-          <a href="tel:+34000000000" class="text-ink/80 hover:text-gold transition-colors cursor-pointer">+34 000 000 000</a>
-        </div>
-        <div class="flex items-center gap-4">
-          <span class="w-10 h-10 flex items-center justify-center border border-gold/40 text-gold shrink-0">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg>
-          </span>
-          <span class="text-ink/80">Marbella, Costa del Sol, Spain</span>
-        </div>
-      </div>
-    </div>
-
-    <form id="contact-form" class="reveal bg-ink p-8 sm:p-10" novalidate>
-      <div class="grid sm:grid-cols-2 gap-5">
-        <div>
-          <label for="name" class="block text-xs tracking-[0.2em] uppercase text-stone/70 mb-2">Full Name <span class="text-goldlight">*</span></label>
-          <input id="name" name="name" type="text" required autocomplete="name"
-            class="w-full bg-transparent border border-white/20 focus:border-goldlight outline-none px-4 py-3 text-white placeholder:text-white/30 transition-colors"
-            placeholder="Jane Smith">
-          <p class="error-text hidden text-red-400 text-xs mt-1" role="alert"></p>
-        </div>
-        <div>
-          <label for="email" class="block text-xs tracking-[0.2em] uppercase text-stone/70 mb-2">Email <span class="text-goldlight">*</span></label>
-          <input id="email" name="email" type="email" required autocomplete="email"
-            class="w-full bg-transparent border border-white/20 focus:border-goldlight outline-none px-4 py-3 text-white placeholder:text-white/30 transition-colors"
-            placeholder="jane@email.com">
-          <p class="error-text hidden text-red-400 text-xs mt-1" role="alert"></p>
-        </div>
-      </div>
-      <div class="mt-5">
-        <label for="phone" class="block text-xs tracking-[0.2em] uppercase text-stone/70 mb-2">Phone</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel"
-          class="w-full bg-transparent border border-white/20 focus:border-goldlight outline-none px-4 py-3 text-white placeholder:text-white/30 transition-colors"
-          placeholder="+34 ...">
-      </div>
-      <div class="mt-5">
-        <label for="message" class="block text-xs tracking-[0.2em] uppercase text-stone/70 mb-2">Tell Us About Your Project <span class="text-goldlight">*</span></label>
-        <textarea id="message" name="message" rows="4" required
-          class="w-full bg-transparent border border-white/20 focus:border-goldlight outline-none px-4 py-3 text-white placeholder:text-white/30 transition-colors resize-none"
-          placeholder="New build, reform, extension..."></textarea>
-        <p class="error-text hidden text-red-400 text-xs mt-1" role="alert"></p>
-      </div>
-      <button type="submit"
-        class="mt-7 w-full inline-flex justify-center items-center gap-2 bg-goldlight text-ink px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-white transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-        <span class="btn-label">Send Enquiry</span>
-      </button>
-      <p id="form-success" class="hidden mt-4 text-goldlight text-sm" role="status" aria-live="polite">Thank you — we'll be in touch within 24 hours.</p>
-    </form>
+<!-- ===== CTA ===== -->
+<section class="py-24 bg-cream text-center">
+  <div class="max-w-2xl mx-auto px-6 reveal">
+    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl">Ready To Build Your Dream Home?</h2>
+    <p class="text-ink/70 mt-6 font-light leading-relaxed">Arrange a no-obligation consultation with our team and discover what's possible for your property.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-goldlight text-ink px-10 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-ink hover:text-white transition-colors cursor-pointer">
+      Request Consultation
+    </a>
   </div>
 </section>
 
@@ -476,19 +318,19 @@
     <div>
       <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Company</h4>
       <ul class="space-y-2 text-sm font-light">
-        <li><a href="#about" class="hover:text-goldlight transition-colors cursor-pointer">About Us</a></li>
-        <li><a href="#projects" class="hover:text-goldlight transition-colors cursor-pointer">Projects</a></li>
-        <li><a href="#testimonials" class="hover:text-goldlight transition-colors cursor-pointer">Testimonials</a></li>
-        <li><a href="#contact" class="hover:text-goldlight transition-colors cursor-pointer">Contact</a></li>
+        <li><a href="about.html" class="hover:text-goldlight transition-colors cursor-pointer">About Us</a></li>
+        <li><a href="projects.html" class="hover:text-goldlight transition-colors cursor-pointer">Projects</a></li>
+        <li><a href="index.html#trust" class="hover:text-goldlight transition-colors cursor-pointer">Why ProMas</a></li>
+        <li><a href="contact.html" class="hover:text-goldlight transition-colors cursor-pointer">Contact</a></li>
       </ul>
     </div>
     <div>
       <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Services</h4>
       <ul class="space-y-2 text-sm font-light">
-        <li><a href="#services" class="hover:text-goldlight transition-colors cursor-pointer">New Build Villas</a></li>
-        <li><a href="#services" class="hover:text-goldlight transition-colors cursor-pointer">Reforms &amp; Extensions</a></li>
-        <li><a href="#services" class="hover:text-goldlight transition-colors cursor-pointer">Interior Design</a></li>
-        <li><a href="#services" class="hover:text-goldlight transition-colors cursor-pointer">Pools &amp; Landscaping</a></li>
+        <li><a href="services.html" class="hover:text-goldlight transition-colors cursor-pointer">New Build Villas</a></li>
+        <li><a href="services.html" class="hover:text-goldlight transition-colors cursor-pointer">Reforms &amp; Extensions</a></li>
+        <li><a href="services.html" class="hover:text-goldlight transition-colors cursor-pointer">Interior Design</a></li>
+        <li><a href="services.html" class="hover:text-goldlight transition-colors cursor-pointer">Pools &amp; Landscaping</a></li>
       </ul>
     </div>
     <div>
@@ -502,101 +344,6 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Sticky header style swap on scroll
-  const header = document.getElementById('site-header');
-  const navTexts = document.querySelectorAll('.nav-text, .nav-logo-text');
-  function onScroll() {
-    if (window.scrollY > 60) {
-      header.classList.add('bg-cream/95', 'backdrop-blur', 'shadow-sm');
-      navTexts.forEach(el => { el.classList.remove('text-white'); el.classList.add('text-ink'); });
-    } else {
-      header.classList.remove('bg-cream/95', 'backdrop-blur', 'shadow-sm');
-      navTexts.forEach(el => { el.classList.add('text-white'); el.classList.remove('text-ink'); });
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
-  menuBtn.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden');
-    iconOpen.classList.toggle('hidden');
-    iconClose.classList.toggle('hidden');
-    menuBtn.setAttribute('aria-expanded', String(!isOpen));
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    iconOpen.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-  }));
-
-  // Scroll reveal
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealEls = document.querySelectorAll('.reveal');
-  if (reduceMotion) {
-    revealEls.forEach(el => el.classList.add('is-visible'));
-  } else {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => io.observe(el));
-  }
-
-  // Contact form validation (client-side only, no backend)
-  const form = document.getElementById('contact-form');
-  const successMsg = document.getElementById('form-success');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let valid = true;
-    ['name', 'email', 'message'].forEach(id => {
-      const field = document.getElementById(id);
-      const errorEl = field.parentElement.querySelector('.error-text');
-      field.classList.remove('border-red-400');
-      errorEl.classList.add('hidden');
-
-      if (!field.value.trim()) {
-        valid = false;
-        field.classList.add('border-red-400');
-        errorEl.textContent = 'This field is required.';
-        errorEl.classList.remove('hidden');
-      } else if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
-        valid = false;
-        field.classList.add('border-red-400');
-        errorEl.textContent = 'Please enter a valid email address.';
-        errorEl.classList.remove('hidden');
-      }
-    });
-
-    if (!valid) {
-      form.querySelector('.border-red-400')?.focus();
-      return;
-    }
-
-    const btn = form.querySelector('button[type="submit"]');
-    const label = btn.querySelector('.btn-label');
-    btn.disabled = true;
-    label.textContent = 'Sending...';
-
-    setTimeout(() => {
-      btn.disabled = false;
-      label.textContent = 'Send Enquiry';
-      form.reset();
-      successMsg.classList.remove('hidden');
-    }, 900);
-  });
-</script>
+<script src="site.js"></script>
 </body>
 </html>

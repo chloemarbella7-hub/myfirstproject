@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | ProMas Building Marbella</title>
+<meta name="description" content="Get in touch with ProMas Building to discuss your villa construction, renovation or interior design project on the Costa del Sol.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+<link href="site.css" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-cream/95 backdrop-blur shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-2 group" aria-label="ProMas Building home">
+      <span class="font-serif text-xl tracking-[0.15em] text-ink nav-logo-text transition-colors">PRO<span class="text-gold">MAS</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10 text-sm tracking-wide uppercase nav-text text-ink">
+      <a href="index.html" data-nav="index.html" class="nav-link transition-colors">Home</a>
+      <a href="services.html" data-nav="services.html" class="nav-link transition-colors">Services</a>
+      <a href="projects.html" data-nav="projects.html" class="nav-link transition-colors">Projects</a>
+      <a href="about.html" data-nav="about.html" class="nav-link transition-colors">About</a>
+      <a href="contact.html" data-nav="contact.html" class="nav-link transition-colors">Contact</a>
+    </nav>
+    <a href="contact.html" class="hidden lg:inline-flex items-center gap-2 border border-gold text-gold hover:bg-gold hover:text-white px-6 py-2.5 text-xs tracking-[0.2em] uppercase transition-colors cursor-pointer">
+      Request Consultation
+    </a>
+    <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-ink cursor-pointer p-2 -mr-2">
+      <svg id="menu-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="menu-icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hidden"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden bg-ink border-t border-white/10 shadow-2xl">
+    <nav class="flex flex-col px-6 py-6 gap-5 text-sm tracking-wide uppercase">
+      <a href="index.html" class="text-stone hover:text-goldlight transition-colors">Home</a>
+      <a href="services.html" class="text-stone hover:text-goldlight transition-colors">Services</a>
+      <a href="projects.html" class="text-stone hover:text-goldlight transition-colors">Projects</a>
+      <a href="about.html" class="text-stone hover:text-goldlight transition-colors">About</a>
+      <a href="contact.html" class="text-stone hover:text-goldlight transition-colors">Contact</a>
+      <a href="contact.html" class="inline-flex w-fit items-center gap-2 border border-goldlight text-goldlight px-6 py-2.5 text-xs tracking-[0.2em] uppercase mt-2">Request Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-bg pt-44 pb-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <p class="reveal text-goldlight text-xs tracking-[0.3em] uppercase mb-4">Get In Touch</p>
+    <h1 class="reveal text-white font-serif text-4xl sm:text-5xl lg:text-6xl max-w-3xl">Let's Discuss Your Project</h1>
+  </div>
+</section>
+
+<!-- ===== CONTACT FORM + INFO ===== -->
+<section class="py-24 lg:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-16">
+    <div class="lg:col-span-3 reveal">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Send An Enquiry</p>
+      <h2 class="font-serif text-3xl sm:text-4xl gold-underline pb-4 mb-8">Tell Us About Your Project</h2>
+
+      <form id="contact-form" class="space-y-6" novalidate>
+        <div>
+          <label for="name" class="block text-xs tracking-[0.2em] uppercase text-ink/70 mb-2">Full Name <span class="text-gold">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" class="w-full border border-ink/20 bg-white px-4 py-3.5 text-sm focus:outline-none focus:border-gold transition-colors" placeholder="Jane Smith">
+          <p class="error-text hidden text-xs text-red-500 mt-2" role="alert" aria-live="polite"></p>
+        </div>
+        <div>
+          <label for="email" class="block text-xs tracking-[0.2em] uppercase text-ink/70 mb-2">Email Address <span class="text-gold">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" class="w-full border border-ink/20 bg-white px-4 py-3.5 text-sm focus:outline-none focus:border-gold transition-colors" placeholder="jane@email.com">
+          <p class="error-text hidden text-xs text-red-500 mt-2" role="alert" aria-live="polite"></p>
+        </div>
+        <div>
+          <label for="phone" class="block text-xs tracking-[0.2em] uppercase text-ink/70 mb-2">Phone Number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" class="w-full border border-ink/20 bg-white px-4 py-3.5 text-sm focus:outline-none focus:border-gold transition-colors" placeholder="+34 600 000 000">
+        </div>
+        <div>
+          <label for="message" class="block text-xs tracking-[0.2em] uppercase text-ink/70 mb-2">Tell Us About Your Project <span class="text-gold">*</span></label>
+          <textarea id="message" name="message" rows="5" class="w-full border border-ink/20 bg-white px-4 py-3.5 text-sm focus:outline-none focus:border-gold transition-colors" placeholder="Property location, scope of work, timeline..."></textarea>
+          <p class="error-text hidden text-xs text-red-500 mt-2" role="alert" aria-live="polite"></p>
+        </div>
+        <button type="submit" class="inline-flex items-center gap-2 bg-goldlight text-ink px-10 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-ink hover:text-white transition-colors cursor-pointer disabled:opacity-50">
+          <span class="btn-label">Send Enquiry</span>
+        </button>
+        <p id="form-success" class="hidden text-sm text-gold mt-4" role="status" aria-live="polite">Thank you — your enquiry has been sent. Our team will be in touch shortly.</p>
+      </form>
+    </div>
+
+    <div class="lg:col-span-2 reveal">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Office</p>
+      <h2 class="font-serif text-3xl gold-underline pb-4 mb-8">Visit Or Call Us</h2>
+
+      <div class="space-y-6 text-sm">
+        <div class="flex gap-4">
+          <svg class="w-5 h-5 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z M12 8v6M9 11h6"/></svg>
+          <p class="text-ink/70 font-light leading-relaxed">Marbella, Málaga<br>Costa del Sol, Spain</p>
+        </div>
+        <div class="flex gap-4">
+          <svg class="w-5 h-5 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h4l2 5-2.5 1.5a11 11 0 0 0 5 5L13 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 7a2 2 0 0 1 2-2Z"/></svg>
+          <a href="tel:+34600000000" class="text-ink/70 font-light hover:text-gold transition-colors">+34 600 000 000</a>
+        </div>
+        <div class="flex gap-4">
+          <svg class="w-5 h-5 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>
+          <a href="mailto:info@promasbuilding.com" class="text-ink/70 font-light hover:text-gold transition-colors">info@promasbuilding.com</a>
+        </div>
+        <div class="flex gap-4">
+          <svg class="w-5 h-5 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3.5 2"/></svg>
+          <p class="text-ink/70 font-light leading-relaxed">Mon – Fri: 9:00 – 18:00<br>Sat: By appointment</p>
+        </div>
+      </div>
+
+      <div class="mt-10 h-64 bg-stone/50 flex items-center justify-center">
+        <p class="text-ink/40 text-xs tracking-[0.2em] uppercase">Map — Marbella, Costa del Sol</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-stone/60 pt-16 pb-8 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <span class="font-serif text-xl tracking-[0.15em] text-white">PRO<span class="text-goldlight">MAS</span></span>
+      <p class="text-sm font-light mt-4 leading-relaxed max-w-xs">Bespoke construction and renovation for distinguished homes across the Costa del Sol.</p>
+    </div>
+    <div>
+      <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Company</h4>
+      <ul class="space-y-2 text-sm font-light">
+        <li><a href="about.html" class="hover:text-goldlight transition-colors cursor-pointer">About Us</a></li>
+        <li><a href="projects.html" class="hover:text-goldlight transition-colors cursor-pointer">Projects</a></li>
+        <li><a href="index.html#trust" class="hover:text-goldlight transition-colors cursor-pointer">Why ProMas</a></li>
+        <li><a href="contact.html" class="hover:text-goldlight transition-colors cursor-pointer">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Services</h4>
+      <ul class="space-y-2 text-sm font-light">
+        <li><a href="services.html#new-build" class="hover:text-goldlight transition-colors cursor-pointer">New Build Villas</a></li>
+        <li><a href="services.html#reforms" class="hover:text-goldlight transition-colors cursor-pointer">Reforms &amp; Extensions</a></li>
+        <li><a href="services.html#interiors" class="hover:text-goldlight transition-colors cursor-pointer">Interior Design</a></li>
+        <li><a href="services.html#pools" class="hover:text-goldlight transition-colors cursor-pointer">Pools &amp; Landscaping</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-xs tracking-[0.2em] uppercase mb-4">Areas Covered</h4>
+      <p class="text-sm font-light leading-relaxed">Marbella, Benahavís, Nueva Andalucía, Puerto Banús, Estepona, Istán &amp; surrounding Costa del Sol.</p>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+    <p>© <span id="year"></span> ProMas Building. All rights reserved.</p>
+    <p class="text-stone/40">Crafted with care for Costa del Sol homeowners.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
